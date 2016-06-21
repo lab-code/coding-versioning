@@ -10,4 +10,10 @@ _Lukáš Hejtmánek_
 
 This site is build using MkDocs, which is a python based static site generator that creates html from markdown. Markdown is widely used in git, R, iPython and others so I believe it won't be a nuissance to learn it, but hopefully quite the opposite.
 
-I will handle the building part. It is based on master merges and travis builds that are in turn uploading done site to github. If you want to learn more, email me at hejtmy@gmail.com
+I will handle the building part. If you want to learn more, email me at hejtmy@gmail.com
+
+## Some guides to get you started
+
+[Markdown tutorial](https://guides.github.com/features/mastering-markdown/)
+
+[MkDocs](http://www.mkdocs.org/)
