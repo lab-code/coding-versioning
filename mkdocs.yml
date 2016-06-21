@@ -1,1 +1,7 @@
 site_name: My Docs
+theme: cosmo
+pages:
+  - index.md
+  - Versioning: versioning.md
+  - Coding style: coding-style.md
+  - Coding tips: coding-tips.md
