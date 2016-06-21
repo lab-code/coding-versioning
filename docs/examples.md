@@ -81,9 +81,7 @@ if (nDays == 365){
   nYears = nYears + 1
 }
 ```
-
-But we can make things even better.
-- Days in week is a constant, so we mark it as such. Also, days in week are variable but days in year are not. That is inconsistent. So following is better
+But we can make things even better. Days in week is a constant, so we mark it as such. Also, days in week are variable but days in year are not. That is inconsistent. So following is more clear
 ```r
 DAYS_IN_WEEK = 7
 DAYS_IN_YEAR = 365
