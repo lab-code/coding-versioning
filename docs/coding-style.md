@@ -1,10 +1,10 @@
 # Overview
 
 # General guide
-
+This is a section of general style, dos and don'ts. For language specific requirements and better tips, go to language specific section. Examples here use variety of languages to better illustrate the concepts.
 ## Better coding
 #### Self sustaining code
-Functions and classes shoudl be, where possible, independent on other classes and inputs. If a function requires a special input that only another function provides, there is then a question whether it wouldn't be better to combine both. Exception is usually preprocessing.
+Functions and classes should be, where possible, independent on other classes and inputs. If a function requires a special input that only another function provides, there is then a question whether it wouldn't be better to combine both. Exception is usually preprocessing.
 
 Use default types where possible - don't pass classes or structs or lists into toher functions if not absolutely necessary. It makes code effective but also less understandable as you look at a function which accepts list of settings and its not clear what that list contains. Comments in the function with description of the list create useless texts, as the list is already defined elsewhere and makes everything bloated and hard to sustain. Imagine that you want to make change to the list structure, remove fields etc - then you need to look for all functions that used it and check, if they still work - boring and bothersome.
 ```matlab
@@ -17,9 +17,9 @@ selectmatrix(data, 'channels', 64, 'outcome', 'matrix') % GOOD - clear what it d
 ```
 
 Use defensive programming!
-Defensive programming is writing code that reports errors and doesn't allow to fail in the middle just because. It is extremely important especially in languages as matlab, R, javascript etc. that allow non typed variables to be accepted - eg.g user can pass matrix instead of value by mistake and function will allow it. Defensive programming is also paramout in all cases where users directly interact with functions. It is not as important in functions that only other functions call.
+Defensive programming is writing code that reports errors and doesn't allow to fail in the middle just because. It is extremely important especially in languages as matlab, R, javascript etc. that allow non typed variables to be accepted - eg.g user can pass matrix instead of value by mistake and function will allow it. Defensive programming is also paramount in all cases where users directly interact with functions. It is not as important in functions that only other functions call.
 
-defensive programming can be iumplemented by assertions as well as clearly stating what type of variable you expect and what you return
+defensive programming can be implemented by assertions as well as clearly stating what type of variable you expect and what you return
 ```matlab
 % FUNCTION to return first character of given string
 function[output] = rtrnfrstch(input) %BAD - not clear what shoudl go in and what to expect
@@ -57,7 +57,7 @@ If you can't, or the functions do not make sense, then add comments.
 - functions should be short (under 60 lines) and do a single thing
 
 ## Naming conventions
-These are some of the naming conventions that deal with clarity of the text. Please refer to each individual programming language for specifics of naming.
+These are some of the naming conventions that deal with clarity of the text. Each programming language has some rules and conventions that you should adopt to better communicate with the community, share and collaborate. Please refer to each individual programming language for specifics of naming. Here are only general style requirements.
 
 ### Variables
 Things should be named clearly, uniquely.

@@ -1,4 +1,5 @@
 # Rewriting R code
+## What is this code doing?
 Have a look at the following simple code control.
 ```r
   d = 0
