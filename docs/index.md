@@ -1,17 +1,19 @@
-# Welcome to MkDocs
+# Welcome to coding best practices
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+This site should serve as a starting point for us to share knowledge and experience with coding and versioning. Not all of us are programmers. We are usually self taught and it shows in the readability of code and sometimes lack of knowledge how to write it well and how to collaborate well. This site should be a starting point. Providing links to tutorials as well as coding styles and advice about particular programming languages.
 
-## Commands
+I hope it will also serve as a nice collaborative and practicing tool for effective sharing.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+_Lukáš Hejtmánek_
 
-## Project layout
+## Backgroud
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+This site is build using MkDocs, which is a python based static site generator that creates html from markdown. Markdown is widely used in git, R, iPython and others so I believe it won't be a nuissance to learn it, but hopefully quite the opposite.
+
+I will handle the building part. If you want to learn more, email me at hejtmy@gmail.com
+
+## Some guides to get you started
+
+[Markdown tutorial](https://guides.github.com/features/mastering-markdown/)
+
+[MkDocs](http://www.mkdocs.org/)

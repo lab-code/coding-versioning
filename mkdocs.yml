@@ -1,1 +1,12 @@
-site_name: My Docs
+site_name: Code better
+theme: readthedocs
+pages:
+  - index.md
+  - Versioning: versioning.md
+  - Coding style: coding-style.md
+  - Coding tips: coding-tips.md
+  - Examples: examples.md
+  - Languages:
+    - 'Matlab' : 'languages/matlab.md'
+    - 'R' : 'languages/r.md'
+    - 'Python' : 'languages/python.md'
