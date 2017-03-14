@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Versioning - Code better</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Versioning";
+    var mkdocs_page_input_path = "versioning.md";
+    var mkdocs_page_url = "/versioning/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Code better</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Versioning</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#versioning">Versioning</a></li>
+                
+                    <li><a class="toctree-l4" href="#tutorials">Tutorials</a></li>
+                
+                    <li><a class="toctree-l4" href="#committing">Committing</a></li>
+                
+                    <li><a class="toctree-l4" href="#branching">Branching</a></li>
+                
+                    <li><a class="toctree-l4" href="#pushing-and-fetching">Pushing and fetching</a></li>
+                
+                    <li><a class="toctree-l4" href="#merging">Merging</a></li>
+                
+                    <li><a class="toctree-l4" href="#rebasing">Rebasing</a></li>
+                
+                    <li><a class="toctree-l4" href="#collaborating">Collaborating</a></li>
+                
+                    <li><a class="toctree-l4" href="#git-features">Git features</a></li>
+                
+                    <li><a class="toctree-l4" href="#tips-and-tricks">Tips and tricks</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../coding-style/">Coding style</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../coding-tips/">Coding tips</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../examples/">Examples</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Languages</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../languages/matlab/">Matlab</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../languages/r/">R</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../languages/python/">Python</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Code better</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Versioning</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="versioning">Versioning</h1>
+<p>To illustrate, what versioning is and what it does, versioning is the whole idea behind google docs rewind features and revisions in any modern text editors. Rather than overwriting each version with a new one and resaving the former with hyperbolic name such as <code>final_version3.4_february_name.docx</code>, we save everything in a single file and keep the history of that file in a versioning system. We can then see who changed what and when, reload working code if it suddenly breaks, trace errors to incompetent people and all that jazz. So it is nothing short of amazing. Let's get started.</p>
+<h2 id="tutorials">Tutorials</h2>
+<p>There are many already well done tutorials on the subject and I recommend to go through them before you go any further. Information in this section should be used as a general tips, rather than teach you how to do things. You should be familiar with staging, committing, pushing, pulling and branching, before you check these tips.</p>
+<ul>
+<li><a href="https://try.github.io/levels/1/challenges/1">Interactive from github</a></li>
+<li><a href="http://rogerdudler.github.io/git-guide/">No deep shit!</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials">Slightly deeper</a></li>
+<li><a href="http://rypress.com/tutorials/git/index">And a last one</a></li>
+</ul>
+<h3 id="on-git-software">On git software</h3>
+<p>There are many amazing git GUIs, such as <a href="https://www.gitkraken.com/">GitKraken</a> or <a href="https://www.sourcetreeapp.com/">SourceTree</a> and I wholeheartedly recommend using them. But learn git from the scratch. If you need help and will search for it online, nobody will direct you towards what button to push. People will tell you what commands to run, so it is good to know those basics.</p>
+<h3 id="what-commands-you-shoudl-know">What commands you shoudl know</h3>
+<p>Before getting deep into git, you shoudl be familiar with these commands</p>
+<pre><code>git add [--all] 
+git commit [-a -m] 
+git branch [-a -l -d -D] 
+git log [&lt;sha&gt;]
+git checkout [&lt;branch&gt;] [&lt;commit&gt;]
+git remote [add set-url]
+git clone [&lt;what&gt;] [&lt;where&gt;]
+git push [&lt;remote&gt; &lt;branch&gt;]
+git reset [&lt;what&gt;][--hard]
+git fetch [&lt;remote&gt;] 
+git pull [&lt;remote/branch&gt;]
+git merge [&lt;branch&gt;]
+git help [&lt;something&gt;]
+</code></pre>
+
+<h2 id="committing">Committing</h2>
+<p>One thing to keep in mind at all times is, that <strong>"Commits are not just saves".</strong></p>
+<p>Unlike save, they are non stationary in time. They allow insight into code development, reasoning behind many not so obvious design steps and allow to debug and pinpoint possible errors better than any save would. Do not use commits as saves. For saving purposes, use <a href="#releases">releases</a>.</p>
+<ul>
+<li><a href="#commit-messages">Commit messages should be descriptive and clearly stated</a></li>
+<li><a href="#commit-problem">Each commit should be localised to a single issue or a problem</a></li>
+<li><a href="#commit-size">Small commits of single files are preferable to large features</a></li>
+<li><a href="#committing-imports">Imports of plugins or new packages should be done in a single commit</a></li>
+</ul>
+<h3 id="commit-messages">Commit messages</h3>
+<p><em>Each commit should convey its purpose clearly.</em></p>
+<p>Same as issues with naming presented in <a href="../coding-style/#naming-conventions">coding-style</a>, messages in commit history such as "Better charts" can be contextually relevant, but are usually useless. If possible, it should be obvious what that commit does. In personal projects, this is quite common to forget and disregard, but in major collaborative projects, necessary to abide by.</p>
+<blockquote>
+<p>I have many times sinned when doing personal projects and committed pieces of code with simply "it works" or "finally fixed?" "maybe fixed" "now fixed" or "need to go home, not time to describe what this does but its awesome" Messages. These were simply reactions to my frustrations or time pressure. It is at those times that I violated my own principles, commits are not saves.</p>
+</blockquote>
+<h3 id="commit-content">Commit content</h3>
+<p><em>Each commit should be localised to a single issue or a problem.</em></p>
+<p>This is often difficult to do, as we figure out why some piece of code isn't working by finding out, that many other parts of the code aren't working. Or the  change we need to do requires to change much more than just a single file. In such cases, it is recommended to stash, checkout a new branch and work on this  rewrite separately. As a general rule of thumb, if you follow the previous rule of commit messages well, and your message contains a word AND, you should think whether it is not better to separate into two separate commits.</p>
+<blockquote>
+<p>Again, I have sinned many times in personal project and committed multiple files without any meaningful message at once. This is usually because of time pressure and necessity to commit before I leave. In such circumstances, I recommend checking out a new branch, and rebasing the next dat.</p>
+</blockquote>
+<h3 id="commit-size">Commit size</h3>
+<p><em>Small commits of single files are preferable to large features. Large features should reside in feature branch.</em></p>
+<p>This is closely related to the previous rule, but its so important it is necessary to rephrase and state again. It doesn't mean to checkout a branch and then do a massive commit. This means, that development of larger features might take longer time and therefore it is good to keep it clean and separate from the master not to break or detriment the general flow of the project.</p>
+<h3 id="committing-imports">Committing imports</h3>
+<p><em>Imports of plugins or new packages SHOULD be done in a single commit.</em></p>
+<p>Sometimes people misinterpret previous rules and import packages file by file, commenting every time a new file is added. This is not a good approach because it bloats the log as well as possibly BREAKS the branch. If separate files in the package depend on other files, these commits, when checked out, will be logically broken. Therefore large unmodified packages should be imported as one.</p>
+<p>Now when you import some code, it usually happens that this code needs changing. It is genuinely good idea to separate imported original code from the changes you made, so people may see what was different before you started tweaking it.</p>
+<h2 id="branching">Branching</h2>
+<p>Branching is a must do in effective git use. It allows separation of non functional, experimental code from the working core, it allows effective collaboration, merge requests, easy switching between problems and much more. There isn't anything world changing in how you branch, just follow the main rules of committing and have these simple rules in mind.</p>
+<ul>
+<li><a href="#branch-content">Branches are used for experimenting or modifying the code</a></li>
+<li><a href="#branch-updating">If possible, branches should be kept in sync with master</a></li>
+</ul>
+<h3 id="branch-content">Branch content</h3>
+<p><em>Branches are used for experimenting or modifying the code.</em></p>
+<p>This seems more like a description, but it is important to state. Branches are not for keeping different releases and or project versions. I know some people who use branches to keep Python and C controllers of their hardware in one project. I strongly recommend against such practices. Although your code might have some similar libraries and structure, it is better to use <a href="#submodules">submodules</a> for such work then branches. It gets messy over time and although it can be done, usually you are just safer in starting two projects and keeping such a different code separate. I know google does it differently, but leave it to them :)</p>
+<blockquote>
+<p>There are many reasons why to do this, but the most common issue you run into if you mix multiple languages and projects, is the gitignore file. Remember, that .asv file are not kept in Matlab commits, therefore when you switch branches, they remain, because they are not versioned. So if you don't ignore them in your python .gitinore, you might inadvertantly commit them to repo.</p>
+</blockquote>
+<h3 id="branch-updating">Branch updating</h3>
+<p><em>If possible, branches should be kept in sync with master</em></p>
+<p>While you are working on a feature or restructuring old code, you should still keep in touch what is happening on master. Once you create a branch and overrite parts of master branch code, you don't have to worry about merging. Git know that you hve changed those pieces of code and will merge any master update appropriately. Just merge master from time to time to your branch or check conflicts with it. You will have to do so when creating pull requests anyway and this will save you a lot of trouble, as two weeks later merges can get really huge and messy.</p>
+<h3 id="branch-logic">Branch logic</h3>
+<p>There are several standard ways of how branching can work. Two the most known are something I am going to refer to as <a href="https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow">Feature</a> style and the other is <a href="https://www.atlassian.com/git/tutorials/comparing-workflows#gitflow-workflow">GitFlow</a>.
+Personally I tried the GitFlow few years ago and it was too convoluted and complicated for any small team projects, so I do not recommend it in research environment.</p>
+<p>Feature approach is quite simple and made even easier by GitHub, Bitbucket and others. It follows the general idea that each feature shoudl be in its own branch, just as GitFlow presumes. These branches has to be keep in synch with the master branch as it gets updated and when they are ready, user merges the branch into master. This merge HAS to be without conflicts. Any conflicts with the master need to be resolved on the feature branch before merge is done. Git will take care of the rest afterwards.</p>
+<h2 id="pushing-and-fetching">Pushing and fetching</h2>
+<p>Pushing and fetching is usually without any issues if you work on your own project and remember what you are working on. There are only few caveats, but the main things to keep in mind are in section about <a href="#collaborating">collaborating</a>.</p>
+<ul>
+<li><a href="#pull-vs-fetch">How to use pull and fetch properly</a></li>
+</ul>
+<h3 id="pull-vs-fetch">Pull vs fetch</h3>
+<p>As you might know, git has two commands for getting stuff from the remote repository. Fetch only "fetches" repositry state from the remote, whereas pull does fetch and then immediatelly merges it to current branch - if the remote local connection is known.</p>
+<p>General recommendation is to do fetch and then merge. Generally it doesn't matter as long as you don't expect any merge issues or you are sure you can resolve thm quickly. It is a good practice to do fetch and merge if you are working on larger public repositories.</p>
+<h2 id="merging">Merging</h2>
+<p>Merging goes quite differently when you work on your own private project without anybody interfering or when you work on project with multiple people. This section is dedicated only to good practices how to deal with your own repositories. For Collaboration, see <a href="#collaborating">below</a>.</p>
+<p>Despite it is debatable, I won't include the intricacies of gt rebase. More about git rebase can be found <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">here</a>. </p>
+<p>Also, have in mind the difference between <code>git merge</code> and <code>git merge --no-ff</code>. If you are workign on a single project by yourself or a small team, you will probably be able to pull just by moving the HEAD forward. But it is up to personal or team preference, if those merges shoudl be done as a mere sequential changes (similar to <code>git rebase</code>) or if you want a new merged commit to be created. Remember that pull requests create new commits regardless even when the commits have same history.</p>
+<h3 id="merging-your-own-repos">Merging your own repos</h3>
+<p>Mergin yor own repos is usually the least problematic thing to do. You can usually get it done by a simple fast-forward commit, if you are not working on several branches at once and keep fogetting the changes you do to each one.</p>
+<p>If you cannot do simple non-conflicting merges in your own repo, maybe its time to think about a new approach.</p>
+<p>Remeber that you can do do pull requests in personal repos as well. It is a good practice to push to remote branchs, do and close a pull request online on that branch and then pull the resulting master back home. </p>
+<h2 id="rebasing">Rebasing</h2>
+<p>Rebasing can be useful tool and it comes into play when there are tens to hundreds of people working on a single project. Despite that, I don't rebase too often. Sometimes I do rebase on master branch if many changes have been made, but overall I generally only use interactive rebase to clean up history before pulling. Checkout <code>git rebase -i</code></p>
+<h2 id="collaborating">Collaborating</h2>
+<ul>
+<li><a href="#basic-flow">How the common flow goes</a></li>
+<li><a href="#never-commit-to-master">Never commit to master!</a></li>
+<li><a href="#master-never-fails">Master never fails</a></li>
+<li><a href="#handling-pull-requests">How to handle pull requests</a></li>
+</ul>
+<h3 id="basic-flow">Basic flow</h3>
+<p>Basic flow of most projects would be as follows:</p>
+<ol>
+<li>Checkout new branch from the tip of master</li>
+<li>Make changes</li>
+<li>Merge master to your branch</li>
+<li>Solve any issues and commit</li>
+<li>Merge branch to master</li>
+</ol>
+<p>The situation is quite more clear with the use of pull requests (Github) or merge requests (Gitlab). In those, the branch is flagged for merge and remote repo tells us, if there are any issues with the merge and doesn't allow us to merge the code until they are solved in the branch. If using any of these major remote repositories, it is advisable that the merge is done online, not locally - although both ways are naturally possible. More about merging <a href="#handling-pull-requests">later</a>.</p>
+<h3 id="never-commit-to-master">Never commit to master</h3>
+<p>It is paramount that this becomes your second nature in collaborative projects. Any direct commits to master WILL trip somebody off. If somebody commits bug into master, everybody will HAVE to merge that bug into their code to keep history linear (although there are debates in how linear should git history really be).</p>
+<p>All coding should be done in feature branches and pulled to master or merged by the lead programmer.</p>
+<h3 id="master-never-fails">Master never fails</h3>
+<p>Master should optimally never fail or have bugs. Master doesn't need to have all the features. It needs to be stable. If there are bugs in your code (which there shouldn't, if you were following this rule :), fix them and them pull to master. That way, there is always a commit to revert to which works.</p>
+<blockquote>
+<p>In reality, especially in the beginning, master will fail. If you don't include some CIs for tests, or your tests suck (or you don't write tests because you are badass), then master will be buggy. But you should try to avoid it at all costs.</p>
+</blockquote>
+<h3 id="handling-pull-requests">Handling pull requests</h3>
+<p>Important information to keep in mind is, that you initiate pull request on the entire branch, not only a certain commit or state. So if the branch is updated or changed, the pull request will be changed as well. This is quite useful, because you can fix problems with merging or other issues on the same pull request before it is closed.</p>
+<p>Overall, pull requests should be kept to the minimal size or precise desciption. More small self contained pull requests are better than on HUGE which changes the entire codebase. This is good for clearity of review as well as nice towards other people who are workign on the project and don't know about theese massive changes comming. Keep it clear and to the minimum.</p>
+<p>Remember, that pull requests can have extensive messages and comments. Be even more descriptive in the message thaan usual with your commits.</p>
+<p>Before the request is initiated, keep the following in mind:</p>
+<ul>
+<li>
+<p>Check if the target branch is updated in your repo and not behind the tip of a master branch</p>
+<blockquote>
+<p>This is non requried, but will save you the trouble and public shame of making a pull request on a repo that can't be merged. Don't do it kid.</p>
+</blockquote>
+</li>
+<li>
+<p>If you are using GitFlow style, You code shoudl check not only vs master but vs develop as well.</p>
+<blockquote>
+<p>Remember, that in GitFlow develop is sorta master, so check, check, check.</p>
+</blockquote>
+</li>
+<li>
+<p>No dependent code is pulled. If your code depends on something else being fixed, fix it first.</p>
+<blockquote>
+<p>It happens more than often that during fixing some part of the code you realise, others parts are so broken you cannot fix this until you fix those. It is good idea to do dependencies separtely and than add those features. Believe me.</p>
+</blockquote>
+</li>
+<li>
+<p>Importance of the pull request is clear. Mesage is well laid out and code is simple and small.</p>
+<blockquote>
+<p>The best pull requests are usually issue fixes, where you can simply add <em>closes #5 by changing var time from int to float</em> message. It will link to the issue and everything is dandy.</p>
+</blockquote>
+</li>
+<li>
+<p>Each pull request commit should be self sustained so they can be cherry-picked.</p>
+<blockquote>
+<p>Sometimes not everyting in your pull request will be wated. But if it has easy changes that are actually good, they can be picked - if they don't depend on commits that are unwanted. If you end up with a long list of commits with their fixes, i is time to rebase before you initiate the pull request.</p>
+</blockquote>
+</li>
+<li>
+<p>Pull request shoudl have limited amout of commits, hopefuly to a maximum of 5</p>
+<blockquote>
+<p>This is simmilar to the previous commits. In large proffesional repos, nobody wants to ahve thousands of amended or back fixed commits. If you made 12 commits out of which 7 are fixes of typos and such, rebase to 5 before you pull.</p>
+</blockquote>
+</li>
+</ul>
+<p>If you didn't folllow the rules above of you did but something went wrong anyway and you cannot merge the branch online(Github screams that they can't be merged), you can easilly do the following:
+1. Checkout the branch locally
+2. Merge master to it
+3. Fix any conflicts (this will teach git how to fix them online)
+4. Push to the branch on the remote
+5. Merge and close pull request</p>
+<h2 id="git-features">Git features</h2>
+<h3 id="releases">Releases</h3>
+<h3 id="tags">Tags</h3>
+<h3 id="submodules">Submodules</h3>
+<h2 id="tips-and-tricks">Tips and tricks</h2>
+<h3 id="multiple-remotes">Multiple remotes</h3>
+<p>Remember, that you can have as many remotes as you wish in one project. Remotes are local, so remember that</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../coding-style/" class="btn btn-neutral float-right" title="Coding style">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../coding-style/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

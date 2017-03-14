@@ -1,0 +1,339 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Welcome to coding best practices\n\n\nThis site should serve as a starting point for us to share knowledge and experience with coding and versioning. Not all of us are programmers. We are usually self taught and it shows in the readability of code and sometimes lack of knowledge how to write it well and how to collaborate well. This site should be a starting point. Providing links to tutorials as well as coding styles and advice about particular programming languages.\n\n\nI hope it will also serve as a nice collaborative and practicing tool for effective sharing.\n\n\nLuk\u00e1\u0161 Hejtm\u00e1nek\n\n\nBackgroud\n\n\nThis site is build using MkDocs, which is a python based static site generator that creates html from markdown. Markdown is widely used in git, R, iPython and others so I believe it won't be a nuissance to learn it, but hopefully quite the opposite.\n\n\nI will handle the building part. If you want to learn more, email me at hejtmy@gmail.com\n\n\nSome guides to get you started\n\n\nMarkdown tutorial\n\n\nMkDocs",
+            "title": "Home"
+        },
+        {
+            "location": "/#welcome-to-coding-best-practices",
+            "text": "This site should serve as a starting point for us to share knowledge and experience with coding and versioning. Not all of us are programmers. We are usually self taught and it shows in the readability of code and sometimes lack of knowledge how to write it well and how to collaborate well. This site should be a starting point. Providing links to tutorials as well as coding styles and advice about particular programming languages.  I hope it will also serve as a nice collaborative and practicing tool for effective sharing.  Luk\u00e1\u0161 Hejtm\u00e1nek",
+            "title": "Welcome to coding best practices"
+        },
+        {
+            "location": "/#backgroud",
+            "text": "This site is build using MkDocs, which is a python based static site generator that creates html from markdown. Markdown is widely used in git, R, iPython and others so I believe it won't be a nuissance to learn it, but hopefully quite the opposite.  I will handle the building part. If you want to learn more, email me at hejtmy@gmail.com",
+            "title": "Backgroud"
+        },
+        {
+            "location": "/#some-guides-to-get-you-started",
+            "text": "Markdown tutorial  MkDocs",
+            "title": "Some guides to get you started"
+        },
+        {
+            "location": "/versioning/",
+            "text": "Versioning\n\n\nTo illustrate, what versioning is and what it does, versioning is the whole idea behind google docs rewind features and revisions in any modern text editors. Rather than overwriting each version with a new one and resaving the former with hyperbolic name such as \nfinal_version3.4_february_name.docx\n, we save everything in a single file and keep the history of that file in a versioning system. We can then see who changed what and when, reload working code if it suddenly breaks, trace errors to incompetent people and all that jazz. So it is nothing short of amazing. Let's get started.\n\n\nTutorials\n\n\nThere are many already well done tutorials on the subject and I recommend to go through them before you go any further. Information in this section should be used as a general tips, rather than teach you how to do things. You should be familiar with staging, committing, pushing, pulling and branching, before you check these tips.\n\n\n\n\nInteractive from github\n\n\nNo deep shit!\n\n\nSlightly deeper\n\n\nAnd a last one\n\n\n\n\nOn git software\n\n\nThere are many amazing git GUIs, such as \nGitKraken\n or \nSourceTree\n and I wholeheartedly recommend using them. But learn git from the scratch. If you need help and will search for it online, nobody will direct you towards what button to push. People will tell you what commands to run, so it is good to know those basics.\n\n\nWhat commands you shoudl know\n\n\nBefore getting deep into git, you shoudl be familiar with these commands\n\n\ngit add [--all] \ngit commit [-a -m] \ngit branch [-a -l -d -D] \ngit log [<sha>]\ngit checkout [<branch>] [<commit>]\ngit remote [add set-url]\ngit clone [<what>] [<where>]\ngit push [<remote> <branch>]\ngit reset [<what>][--hard]\ngit fetch [<remote>] \ngit pull [<remote/branch>]\ngit merge [<branch>]\ngit help [<something>]\n\n\n\n\nCommitting\n\n\nOne thing to keep in mind at all times is, that \n\"Commits are not just saves\".\n\n\nUnlike save, they are non stationary in time. They allow insight into code development, reasoning behind many not so obvious design steps and allow to debug and pinpoint possible errors better than any save would. Do not use commits as saves. For saving purposes, use \nreleases\n.\n\n\n\n\nCommit messages should be descriptive and clearly stated\n\n\nEach commit should be localised to a single issue or a problem\n\n\nSmall commits of single files are preferable to large features\n\n\nImports of plugins or new packages should be done in a single commit\n\n\n\n\nCommit messages\n\n\nEach commit should convey its purpose clearly.\n\n\nSame as issues with naming presented in \ncoding-style\n, messages in commit history such as \"Better charts\" can be contextually relevant, but are usually useless. If possible, it should be obvious what that commit does. In personal projects, this is quite common to forget and disregard, but in major collaborative projects, necessary to abide by.\n\n\n\n\nI have many times sinned when doing personal projects and committed pieces of code with simply \"it works\" or \"finally fixed?\" \"maybe fixed\" \"now fixed\" or \"need to go home, not time to describe what this does but its awesome\" Messages. These were simply reactions to my frustrations or time pressure. It is at those times that I violated my own principles, commits are not saves.\n\n\n\n\nCommit content\n\n\nEach commit should be localised to a single issue or a problem.\n\n\nThis is often difficult to do, as we figure out why some piece of code isn't working by finding out, that many other parts of the code aren't working. Or the  change we need to do requires to change much more than just a single file. In such cases, it is recommended to stash, checkout a new branch and work on this  rewrite separately. As a general rule of thumb, if you follow the previous rule of commit messages well, and your message contains a word AND, you should think whether it is not better to separate into two separate commits.\n\n\n\n\nAgain, I have sinned many times in personal project and committed multiple files without any meaningful message at once. This is usually because of time pressure and necessity to commit before I leave. In such circumstances, I recommend checking out a new branch, and rebasing the next dat.\n\n\n\n\nCommit size\n\n\nSmall commits of single files are preferable to large features. Large features should reside in feature branch.\n\n\nThis is closely related to the previous rule, but its so important it is necessary to rephrase and state again. It doesn't mean to checkout a branch and then do a massive commit. This means, that development of larger features might take longer time and therefore it is good to keep it clean and separate from the master not to break or detriment the general flow of the project.\n\n\nCommitting imports\n\n\nImports of plugins or new packages SHOULD be done in a single commit.\n\n\nSometimes people misinterpret previous rules and import packages file by file, commenting every time a new file is added. This is not a good approach because it bloats the log as well as possibly BREAKS the branch. If separate files in the package depend on other files, these commits, when checked out, will be logically broken. Therefore large unmodified packages should be imported as one.\n\n\nNow when you import some code, it usually happens that this code needs changing. It is genuinely good idea to separate imported original code from the changes you made, so people may see what was different before you started tweaking it.\n\n\nBranching\n\n\nBranching is a must do in effective git use. It allows separation of non functional, experimental code from the working core, it allows effective collaboration, merge requests, easy switching between problems and much more. There isn't anything world changing in how you branch, just follow the main rules of committing and have these simple rules in mind.\n\n\n\n\nBranches are used for experimenting or modifying the code\n\n\nIf possible, branches should be kept in sync with master\n\n\n\n\nBranch content\n\n\nBranches are used for experimenting or modifying the code.\n\n\nThis seems more like a description, but it is important to state. Branches are not for keeping different releases and or project versions. I know some people who use branches to keep Python and C controllers of their hardware in one project. I strongly recommend against such practices. Although your code might have some similar libraries and structure, it is better to use \nsubmodules\n for such work then branches. It gets messy over time and although it can be done, usually you are just safer in starting two projects and keeping such a different code separate. I know google does it differently, but leave it to them :)\n\n\n\n\nThere are many reasons why to do this, but the most common issue you run into if you mix multiple languages and projects, is the gitignore file. Remember, that .asv file are not kept in Matlab commits, therefore when you switch branches, they remain, because they are not versioned. So if you don't ignore them in your python .gitinore, you might inadvertantly commit them to repo.\n\n\n\n\nBranch updating\n\n\nIf possible, branches should be kept in sync with master\n\n\nWhile you are working on a feature or restructuring old code, you should still keep in touch what is happening on master. Once you create a branch and overrite parts of master branch code, you don't have to worry about merging. Git know that you hve changed those pieces of code and will merge any master update appropriately. Just merge master from time to time to your branch or check conflicts with it. You will have to do so when creating pull requests anyway and this will save you a lot of trouble, as two weeks later merges can get really huge and messy.\n\n\nBranch logic\n\n\nThere are several standard ways of how branching can work. Two the most known are something I am going to refer to as \nFeature\n style and the other is \nGitFlow\n.\nPersonally I tried the GitFlow few years ago and it was too convoluted and complicated for any small team projects, so I do not recommend it in research environment.\n\n\nFeature approach is quite simple and made even easier by GitHub, Bitbucket and others. It follows the general idea that each feature shoudl be in its own branch, just as GitFlow presumes. These branches has to be keep in synch with the master branch as it gets updated and when they are ready, user merges the branch into master. This merge HAS to be without conflicts. Any conflicts with the master need to be resolved on the feature branch before merge is done. Git will take care of the rest afterwards.\n\n\nPushing and fetching\n\n\nPushing and fetching is usually without any issues if you work on your own project and remember what you are working on. There are only few caveats, but the main things to keep in mind are in section about \ncollaborating\n.\n\n\n\n\nHow to use pull and fetch properly\n\n\n\n\nPull vs fetch\n\n\nAs you might know, git has two commands for getting stuff from the remote repository. Fetch only \"fetches\" repositry state from the remote, whereas pull does fetch and then immediatelly merges it to current branch - if the remote local connection is known.\n\n\nGeneral recommendation is to do fetch and then merge. Generally it doesn't matter as long as you don't expect any merge issues or you are sure you can resolve thm quickly. It is a good practice to do fetch and merge if you are working on larger public repositories.\n\n\nMerging\n\n\nMerging goes quite differently when you work on your own private project without anybody interfering or when you work on project with multiple people. This section is dedicated only to good practices how to deal with your own repositories. For Collaboration, see \nbelow\n.\n\n\nDespite it is debatable, I won't include the intricacies of gt rebase. More about git rebase can be found \nhere\n. \n\n\nAlso, have in mind the difference between \ngit merge\n and \ngit merge --no-ff\n. If you are workign on a single project by yourself or a small team, you will probably be able to pull just by moving the HEAD forward. But it is up to personal or team preference, if those merges shoudl be done as a mere sequential changes (similar to \ngit rebase\n) or if you want a new merged commit to be created. Remember that pull requests create new commits regardless even when the commits have same history.\n\n\nMerging your own repos\n\n\nMergin yor own repos is usually the least problematic thing to do. You can usually get it done by a simple fast-forward commit, if you are not working on several branches at once and keep fogetting the changes you do to each one.\n\n\nIf you cannot do simple non-conflicting merges in your own repo, maybe its time to think about a new approach.\n\n\nRemeber that you can do do pull requests in personal repos as well. It is a good practice to push to remote branchs, do and close a pull request online on that branch and then pull the resulting master back home. \n\n\nRebasing\n\n\nRebasing can be useful tool and it comes into play when there are tens to hundreds of people working on a single project. Despite that, I don't rebase too often. Sometimes I do rebase on master branch if many changes have been made, but overall I generally only use interactive rebase to clean up history before pulling. Checkout \ngit rebase -i\n\n\nCollaborating\n\n\n\n\nHow the common flow goes\n\n\nNever commit to master!\n\n\nMaster never fails\n\n\nHow to handle pull requests\n\n\n\n\nBasic flow\n\n\nBasic flow of most projects would be as follows:\n\n\n\n\nCheckout new branch from the tip of master\n\n\nMake changes\n\n\nMerge master to your branch\n\n\nSolve any issues and commit\n\n\nMerge branch to master\n\n\n\n\nThe situation is quite more clear with the use of pull requests (Github) or merge requests (Gitlab). In those, the branch is flagged for merge and remote repo tells us, if there are any issues with the merge and doesn't allow us to merge the code until they are solved in the branch. If using any of these major remote repositories, it is advisable that the merge is done online, not locally - although both ways are naturally possible. More about merging \nlater\n.\n\n\nNever commit to master\n\n\nIt is paramount that this becomes your second nature in collaborative projects. Any direct commits to master WILL trip somebody off. If somebody commits bug into master, everybody will HAVE to merge that bug into their code to keep history linear (although there are debates in how linear should git history really be).\n\n\nAll coding should be done in feature branches and pulled to master or merged by the lead programmer.\n\n\nMaster never fails\n\n\nMaster should optimally never fail or have bugs. Master doesn't need to have all the features. It needs to be stable. If there are bugs in your code (which there shouldn't, if you were following this rule :), fix them and them pull to master. That way, there is always a commit to revert to which works.\n\n\n\n\nIn reality, especially in the beginning, master will fail. If you don't include some CIs for tests, or your tests suck (or you don't write tests because you are badass), then master will be buggy. But you should try to avoid it at all costs.\n\n\n\n\nHandling pull requests\n\n\nImportant information to keep in mind is, that you initiate pull request on the entire branch, not only a certain commit or state. So if the branch is updated or changed, the pull request will be changed as well. This is quite useful, because you can fix problems with merging or other issues on the same pull request before it is closed.\n\n\nOverall, pull requests should be kept to the minimal size or precise desciption. More small self contained pull requests are better than on HUGE which changes the entire codebase. This is good for clearity of review as well as nice towards other people who are workign on the project and don't know about theese massive changes comming. Keep it clear and to the minimum.\n\n\nRemember, that pull requests can have extensive messages and comments. Be even more descriptive in the message thaan usual with your commits.\n\n\nBefore the request is initiated, keep the following in mind:\n\n\n\n\n\n\nCheck if the target branch is updated in your repo and not behind the tip of a master branch\n\n\n\n\nThis is non requried, but will save you the trouble and public shame of making a pull request on a repo that can't be merged. Don't do it kid.\n\n\n\n\n\n\n\n\nIf you are using GitFlow style, You code shoudl check not only vs master but vs develop as well.\n\n\n\n\nRemember, that in GitFlow develop is sorta master, so check, check, check.\n\n\n\n\n\n\n\n\nNo dependent code is pulled. If your code depends on something else being fixed, fix it first.\n\n\n\n\nIt happens more than often that during fixing some part of the code you realise, others parts are so broken you cannot fix this until you fix those. It is good idea to do dependencies separtely and than add those features. Believe me.\n\n\n\n\n\n\n\n\nImportance of the pull request is clear. Mesage is well laid out and code is simple and small.\n\n\n\n\nThe best pull requests are usually issue fixes, where you can simply add \ncloses #5 by changing var time from int to float\n message. It will link to the issue and everything is dandy.\n\n\n\n\n\n\n\n\nEach pull request commit should be self sustained so they can be cherry-picked.\n\n\n\n\nSometimes not everyting in your pull request will be wated. But if it has easy changes that are actually good, they can be picked - if they don't depend on commits that are unwanted. If you end up with a long list of commits with their fixes, i is time to rebase before you initiate the pull request.\n\n\n\n\n\n\n\n\nPull request shoudl have limited amout of commits, hopefuly to a maximum of 5\n\n\n\n\nThis is simmilar to the previous commits. In large proffesional repos, nobody wants to ahve thousands of amended or back fixed commits. If you made 12 commits out of which 7 are fixes of typos and such, rebase to 5 before you pull.\n\n\n\n\n\n\n\n\nIf you didn't folllow the rules above of you did but something went wrong anyway and you cannot merge the branch online(Github screams that they can't be merged), you can easilly do the following:\n1. Checkout the branch locally\n2. Merge master to it\n3. Fix any conflicts (this will teach git how to fix them online)\n4. Push to the branch on the remote\n5. Merge and close pull request\n\n\nGit features\n\n\nReleases\n\n\nTags\n\n\nSubmodules\n\n\nTips and tricks\n\n\nMultiple remotes\n\n\nRemember, that you can have as many remotes as you wish in one project. Remotes are local, so remember that",
+            "title": "Versioning"
+        },
+        {
+            "location": "/versioning/#versioning",
+            "text": "To illustrate, what versioning is and what it does, versioning is the whole idea behind google docs rewind features and revisions in any modern text editors. Rather than overwriting each version with a new one and resaving the former with hyperbolic name such as  final_version3.4_february_name.docx , we save everything in a single file and keep the history of that file in a versioning system. We can then see who changed what and when, reload working code if it suddenly breaks, trace errors to incompetent people and all that jazz. So it is nothing short of amazing. Let's get started.",
+            "title": "Versioning"
+        },
+        {
+            "location": "/versioning/#tutorials",
+            "text": "There are many already well done tutorials on the subject and I recommend to go through them before you go any further. Information in this section should be used as a general tips, rather than teach you how to do things. You should be familiar with staging, committing, pushing, pulling and branching, before you check these tips.   Interactive from github  No deep shit!  Slightly deeper  And a last one",
+            "title": "Tutorials"
+        },
+        {
+            "location": "/versioning/#on-git-software",
+            "text": "There are many amazing git GUIs, such as  GitKraken  or  SourceTree  and I wholeheartedly recommend using them. But learn git from the scratch. If you need help and will search for it online, nobody will direct you towards what button to push. People will tell you what commands to run, so it is good to know those basics.",
+            "title": "On git software"
+        },
+        {
+            "location": "/versioning/#what-commands-you-shoudl-know",
+            "text": "Before getting deep into git, you shoudl be familiar with these commands  git add [--all] \ngit commit [-a -m] \ngit branch [-a -l -d -D] \ngit log [<sha>]\ngit checkout [<branch>] [<commit>]\ngit remote [add set-url]\ngit clone [<what>] [<where>]\ngit push [<remote> <branch>]\ngit reset [<what>][--hard]\ngit fetch [<remote>] \ngit pull [<remote/branch>]\ngit merge [<branch>]\ngit help [<something>]",
+            "title": "What commands you shoudl know"
+        },
+        {
+            "location": "/versioning/#committing",
+            "text": "One thing to keep in mind at all times is, that  \"Commits are not just saves\".  Unlike save, they are non stationary in time. They allow insight into code development, reasoning behind many not so obvious design steps and allow to debug and pinpoint possible errors better than any save would. Do not use commits as saves. For saving purposes, use  releases .   Commit messages should be descriptive and clearly stated  Each commit should be localised to a single issue or a problem  Small commits of single files are preferable to large features  Imports of plugins or new packages should be done in a single commit",
+            "title": "Committing"
+        },
+        {
+            "location": "/versioning/#commit-messages",
+            "text": "Each commit should convey its purpose clearly.  Same as issues with naming presented in  coding-style , messages in commit history such as \"Better charts\" can be contextually relevant, but are usually useless. If possible, it should be obvious what that commit does. In personal projects, this is quite common to forget and disregard, but in major collaborative projects, necessary to abide by.   I have many times sinned when doing personal projects and committed pieces of code with simply \"it works\" or \"finally fixed?\" \"maybe fixed\" \"now fixed\" or \"need to go home, not time to describe what this does but its awesome\" Messages. These were simply reactions to my frustrations or time pressure. It is at those times that I violated my own principles, commits are not saves.",
+            "title": "Commit messages"
+        },
+        {
+            "location": "/versioning/#commit-content",
+            "text": "Each commit should be localised to a single issue or a problem.  This is often difficult to do, as we figure out why some piece of code isn't working by finding out, that many other parts of the code aren't working. Or the  change we need to do requires to change much more than just a single file. In such cases, it is recommended to stash, checkout a new branch and work on this  rewrite separately. As a general rule of thumb, if you follow the previous rule of commit messages well, and your message contains a word AND, you should think whether it is not better to separate into two separate commits.   Again, I have sinned many times in personal project and committed multiple files without any meaningful message at once. This is usually because of time pressure and necessity to commit before I leave. In such circumstances, I recommend checking out a new branch, and rebasing the next dat.",
+            "title": "Commit content"
+        },
+        {
+            "location": "/versioning/#commit-size",
+            "text": "Small commits of single files are preferable to large features. Large features should reside in feature branch.  This is closely related to the previous rule, but its so important it is necessary to rephrase and state again. It doesn't mean to checkout a branch and then do a massive commit. This means, that development of larger features might take longer time and therefore it is good to keep it clean and separate from the master not to break or detriment the general flow of the project.",
+            "title": "Commit size"
+        },
+        {
+            "location": "/versioning/#committing-imports",
+            "text": "Imports of plugins or new packages SHOULD be done in a single commit.  Sometimes people misinterpret previous rules and import packages file by file, commenting every time a new file is added. This is not a good approach because it bloats the log as well as possibly BREAKS the branch. If separate files in the package depend on other files, these commits, when checked out, will be logically broken. Therefore large unmodified packages should be imported as one.  Now when you import some code, it usually happens that this code needs changing. It is genuinely good idea to separate imported original code from the changes you made, so people may see what was different before you started tweaking it.",
+            "title": "Committing imports"
+        },
+        {
+            "location": "/versioning/#branching",
+            "text": "Branching is a must do in effective git use. It allows separation of non functional, experimental code from the working core, it allows effective collaboration, merge requests, easy switching between problems and much more. There isn't anything world changing in how you branch, just follow the main rules of committing and have these simple rules in mind.   Branches are used for experimenting or modifying the code  If possible, branches should be kept in sync with master",
+            "title": "Branching"
+        },
+        {
+            "location": "/versioning/#branch-content",
+            "text": "Branches are used for experimenting or modifying the code.  This seems more like a description, but it is important to state. Branches are not for keeping different releases and or project versions. I know some people who use branches to keep Python and C controllers of their hardware in one project. I strongly recommend against such practices. Although your code might have some similar libraries and structure, it is better to use  submodules  for such work then branches. It gets messy over time and although it can be done, usually you are just safer in starting two projects and keeping such a different code separate. I know google does it differently, but leave it to them :)   There are many reasons why to do this, but the most common issue you run into if you mix multiple languages and projects, is the gitignore file. Remember, that .asv file are not kept in Matlab commits, therefore when you switch branches, they remain, because they are not versioned. So if you don't ignore them in your python .gitinore, you might inadvertantly commit them to repo.",
+            "title": "Branch content"
+        },
+        {
+            "location": "/versioning/#branch-updating",
+            "text": "If possible, branches should be kept in sync with master  While you are working on a feature or restructuring old code, you should still keep in touch what is happening on master. Once you create a branch and overrite parts of master branch code, you don't have to worry about merging. Git know that you hve changed those pieces of code and will merge any master update appropriately. Just merge master from time to time to your branch or check conflicts with it. You will have to do so when creating pull requests anyway and this will save you a lot of trouble, as two weeks later merges can get really huge and messy.",
+            "title": "Branch updating"
+        },
+        {
+            "location": "/versioning/#branch-logic",
+            "text": "There are several standard ways of how branching can work. Two the most known are something I am going to refer to as  Feature  style and the other is  GitFlow .\nPersonally I tried the GitFlow few years ago and it was too convoluted and complicated for any small team projects, so I do not recommend it in research environment.  Feature approach is quite simple and made even easier by GitHub, Bitbucket and others. It follows the general idea that each feature shoudl be in its own branch, just as GitFlow presumes. These branches has to be keep in synch with the master branch as it gets updated and when they are ready, user merges the branch into master. This merge HAS to be without conflicts. Any conflicts with the master need to be resolved on the feature branch before merge is done. Git will take care of the rest afterwards.",
+            "title": "Branch logic"
+        },
+        {
+            "location": "/versioning/#pushing-and-fetching",
+            "text": "Pushing and fetching is usually without any issues if you work on your own project and remember what you are working on. There are only few caveats, but the main things to keep in mind are in section about  collaborating .   How to use pull and fetch properly",
+            "title": "Pushing and fetching"
+        },
+        {
+            "location": "/versioning/#pull-vs-fetch",
+            "text": "As you might know, git has two commands for getting stuff from the remote repository. Fetch only \"fetches\" repositry state from the remote, whereas pull does fetch and then immediatelly merges it to current branch - if the remote local connection is known.  General recommendation is to do fetch and then merge. Generally it doesn't matter as long as you don't expect any merge issues or you are sure you can resolve thm quickly. It is a good practice to do fetch and merge if you are working on larger public repositories.",
+            "title": "Pull vs fetch"
+        },
+        {
+            "location": "/versioning/#merging",
+            "text": "Merging goes quite differently when you work on your own private project without anybody interfering or when you work on project with multiple people. This section is dedicated only to good practices how to deal with your own repositories. For Collaboration, see  below .  Despite it is debatable, I won't include the intricacies of gt rebase. More about git rebase can be found  here .   Also, have in mind the difference between  git merge  and  git merge --no-ff . If you are workign on a single project by yourself or a small team, you will probably be able to pull just by moving the HEAD forward. But it is up to personal or team preference, if those merges shoudl be done as a mere sequential changes (similar to  git rebase ) or if you want a new merged commit to be created. Remember that pull requests create new commits regardless even when the commits have same history.",
+            "title": "Merging"
+        },
+        {
+            "location": "/versioning/#merging-your-own-repos",
+            "text": "Mergin yor own repos is usually the least problematic thing to do. You can usually get it done by a simple fast-forward commit, if you are not working on several branches at once and keep fogetting the changes you do to each one.  If you cannot do simple non-conflicting merges in your own repo, maybe its time to think about a new approach.  Remeber that you can do do pull requests in personal repos as well. It is a good practice to push to remote branchs, do and close a pull request online on that branch and then pull the resulting master back home.",
+            "title": "Merging your own repos"
+        },
+        {
+            "location": "/versioning/#rebasing",
+            "text": "Rebasing can be useful tool and it comes into play when there are tens to hundreds of people working on a single project. Despite that, I don't rebase too often. Sometimes I do rebase on master branch if many changes have been made, but overall I generally only use interactive rebase to clean up history before pulling. Checkout  git rebase -i",
+            "title": "Rebasing"
+        },
+        {
+            "location": "/versioning/#collaborating",
+            "text": "How the common flow goes  Never commit to master!  Master never fails  How to handle pull requests",
+            "title": "Collaborating"
+        },
+        {
+            "location": "/versioning/#basic-flow",
+            "text": "Basic flow of most projects would be as follows:   Checkout new branch from the tip of master  Make changes  Merge master to your branch  Solve any issues and commit  Merge branch to master   The situation is quite more clear with the use of pull requests (Github) or merge requests (Gitlab). In those, the branch is flagged for merge and remote repo tells us, if there are any issues with the merge and doesn't allow us to merge the code until they are solved in the branch. If using any of these major remote repositories, it is advisable that the merge is done online, not locally - although both ways are naturally possible. More about merging  later .",
+            "title": "Basic flow"
+        },
+        {
+            "location": "/versioning/#never-commit-to-master",
+            "text": "It is paramount that this becomes your second nature in collaborative projects. Any direct commits to master WILL trip somebody off. If somebody commits bug into master, everybody will HAVE to merge that bug into their code to keep history linear (although there are debates in how linear should git history really be).  All coding should be done in feature branches and pulled to master or merged by the lead programmer.",
+            "title": "Never commit to master"
+        },
+        {
+            "location": "/versioning/#master-never-fails",
+            "text": "Master should optimally never fail or have bugs. Master doesn't need to have all the features. It needs to be stable. If there are bugs in your code (which there shouldn't, if you were following this rule :), fix them and them pull to master. That way, there is always a commit to revert to which works.   In reality, especially in the beginning, master will fail. If you don't include some CIs for tests, or your tests suck (or you don't write tests because you are badass), then master will be buggy. But you should try to avoid it at all costs.",
+            "title": "Master never fails"
+        },
+        {
+            "location": "/versioning/#handling-pull-requests",
+            "text": "Important information to keep in mind is, that you initiate pull request on the entire branch, not only a certain commit or state. So if the branch is updated or changed, the pull request will be changed as well. This is quite useful, because you can fix problems with merging or other issues on the same pull request before it is closed.  Overall, pull requests should be kept to the minimal size or precise desciption. More small self contained pull requests are better than on HUGE which changes the entire codebase. This is good for clearity of review as well as nice towards other people who are workign on the project and don't know about theese massive changes comming. Keep it clear and to the minimum.  Remember, that pull requests can have extensive messages and comments. Be even more descriptive in the message thaan usual with your commits.  Before the request is initiated, keep the following in mind:    Check if the target branch is updated in your repo and not behind the tip of a master branch   This is non requried, but will save you the trouble and public shame of making a pull request on a repo that can't be merged. Don't do it kid.     If you are using GitFlow style, You code shoudl check not only vs master but vs develop as well.   Remember, that in GitFlow develop is sorta master, so check, check, check.     No dependent code is pulled. If your code depends on something else being fixed, fix it first.   It happens more than often that during fixing some part of the code you realise, others parts are so broken you cannot fix this until you fix those. It is good idea to do dependencies separtely and than add those features. Believe me.     Importance of the pull request is clear. Mesage is well laid out and code is simple and small.   The best pull requests are usually issue fixes, where you can simply add  closes #5 by changing var time from int to float  message. It will link to the issue and everything is dandy.     Each pull request commit should be self sustained so they can be cherry-picked.   Sometimes not everyting in your pull request will be wated. But if it has easy changes that are actually good, they can be picked - if they don't depend on commits that are unwanted. If you end up with a long list of commits with their fixes, i is time to rebase before you initiate the pull request.     Pull request shoudl have limited amout of commits, hopefuly to a maximum of 5   This is simmilar to the previous commits. In large proffesional repos, nobody wants to ahve thousands of amended or back fixed commits. If you made 12 commits out of which 7 are fixes of typos and such, rebase to 5 before you pull.     If you didn't folllow the rules above of you did but something went wrong anyway and you cannot merge the branch online(Github screams that they can't be merged), you can easilly do the following:\n1. Checkout the branch locally\n2. Merge master to it\n3. Fix any conflicts (this will teach git how to fix them online)\n4. Push to the branch on the remote\n5. Merge and close pull request",
+            "title": "Handling pull requests"
+        },
+        {
+            "location": "/versioning/#git-features",
+            "text": "",
+            "title": "Git features"
+        },
+        {
+            "location": "/versioning/#releases",
+            "text": "",
+            "title": "Releases"
+        },
+        {
+            "location": "/versioning/#tags",
+            "text": "",
+            "title": "Tags"
+        },
+        {
+            "location": "/versioning/#submodules",
+            "text": "",
+            "title": "Submodules"
+        },
+        {
+            "location": "/versioning/#tips-and-tricks",
+            "text": "",
+            "title": "Tips and tricks"
+        },
+        {
+            "location": "/versioning/#multiple-remotes",
+            "text": "Remember, that you can have as many remotes as you wish in one project. Remotes are local, so remember that",
+            "title": "Multiple remotes"
+        },
+        {
+            "location": "/coding-style/",
+            "text": "Overview\n\n\nGeneral guide\n\n\nThis is a section of general style, dos and don'ts. For language specific requirements and better tips, go to language specific section. Examples here use variety of languages to better illustrate the concepts.\n\n\nBetter coding\n\n\nSelf sustaining code\n\n\nFunctions and classes should be, where possible, independent on other classes and inputs. If a function requires a special input that only another function provides, there is then a question whether it wouldn't be better to combine both. Exception is usually preprocessing.\n\n\nUse default types where possible - don't pass classes or structs or lists into toher functions if not absolutely necessary. It makes code effective but also less understandable as you look at a function which accepts list of settings and its not clear what that list contains. Comments in the function with description of the list create useless texts, as the list is already defined elsewhere and makes everything bloated and hard to sustain. Imagine that you want to make change to the list structure, remove fields etc - then you need to look for all functions that used it and check, if they still work - boring and bothersome.\n\n\nsettings = struct()\nsettings.channels = 64\nsettings.outcome = 'matrix'\nselectmatrix(data, settings) % BAD style - doesn't raise errors and warning and needs high control on the selectmatrix function side. Also, can lead to settings definitions far away from the function which reduces reading flow. Also, it is LONG!\n\nselectmatrix(data, 'channels', 64, 'outcome', 'matrix') % GOOD - clear what it does, can be easilly controlled in the function. One line as well.\n\n\n\n\nUse defensive programming!\nDefensive programming is writing code that reports errors and doesn't allow to fail in the middle just because. It is extremely important especially in languages as matlab, R, javascript etc. that allow non typed variables to be accepted - eg.g user can pass matrix instead of value by mistake and function will allow it. Defensive programming is also paramount in all cases where users directly interact with functions. It is not as important in functions that only other functions call.\n\n\ndefensive programming can be implemented by assertions as well as clearly stating what type of variable you expect and what you return\n\n\n% FUNCTION to return first character of given string\nfunction[output] = rtrnfrstch(input) %BAD - not clear what shoudl go in and what to expect\n  output = input(1) %BAD - what if input is a struct?\nend\n\n%GOOD\nfunction [outputCharacter] = returnfirstletter(inputString)\n  assert()\n  if ~character(inputString)\n    warning() %well defined matlab warning message\n  end\n  outputCharacter = inputString(1)\nend\n\n\n\n\nfunction [character] = returnfirstletter(inputString)\nend\n\n\n\n\nFlow\n\n\nDon't use while unless you are a absolutely sure what you are doing.\n\n\nComments\n\n\nGeneral rule is that every comment in flow points to poorly written code. If you use non standard naming conventions, non standard input types etc. then you need comments. But at that time it's important to ask a question, shouldn't I rather rewrite the code behind?\n\n\nIf you can't, or the functions do not make sense, then add comments.\n\n\nFunctions\n\n\n\n\nFunctions should be self sustained where possible. Should not depend on other functions or inputs that are not of basic types (integer, string, list etc.).\n\n\nfunctions should validate input where error can be expected\n\n\n\n\nfunction should not depend on specific input of other functions if possible - this can lead to confusion in complex functions as matlab or R doesn't well implement namespaces and classes\n\n\n\n\n\n\nnaming should be preserved throughout functions if possible (if one function accepts \"header\" as parameter, the passing script should also pass in header variable)\n\n\n\n\nfunctions should be short (under 60 lines) and do a single thing\n\n\n\n\nNaming conventions\n\n\nThese are some of the naming conventions that deal with clarity of the text. Each programming language has some rules and conventions that you should adopt to better communicate with the community, share and collaborate. Please refer to each individual programming language for specifics of naming. Here are only general style requirements.\n\n\nVariables\n\n\nThings should be named clearly, uniquely.\n\n\nch = 3 %BAD\nchannel = 3\nselCh_i = [5:10]  %BAD\nselectedChannelsIndices = [5:10] %GOOD\n\n\n\n\nNamig should reflect what will reside inside, therefore keep plurals, indicate if it will be a number or string, etc.\n\n\nresults = data.frame(id = c(1:100), height = seq())\n\ncarIndex = c(2,3,4) #BAD - should be carIndices\ncompleteCases = c(1:54, 67:98) #SEMI-GOOD - better use of plural, but we don't know if it talks about rows, list indices, referencing table column\ncompleteCasesRows =  c(1:54, 67:98) #GOOD\nresultsTable[completeCaseRows, ] #simple selection\n\ncompleteCasesId = c(1:54, 67:98) #GOOD\nresults[results$id %in% completeCasesId, ] #selection based on id",
+            "title": "Coding style"
+        },
+        {
+            "location": "/coding-style/#overview",
+            "text": "",
+            "title": "Overview"
+        },
+        {
+            "location": "/coding-style/#general-guide",
+            "text": "This is a section of general style, dos and don'ts. For language specific requirements and better tips, go to language specific section. Examples here use variety of languages to better illustrate the concepts.",
+            "title": "General guide"
+        },
+        {
+            "location": "/coding-style/#better-coding",
+            "text": "",
+            "title": "Better coding"
+        },
+        {
+            "location": "/coding-style/#self-sustaining-code",
+            "text": "Functions and classes should be, where possible, independent on other classes and inputs. If a function requires a special input that only another function provides, there is then a question whether it wouldn't be better to combine both. Exception is usually preprocessing.  Use default types where possible - don't pass classes or structs or lists into toher functions if not absolutely necessary. It makes code effective but also less understandable as you look at a function which accepts list of settings and its not clear what that list contains. Comments in the function with description of the list create useless texts, as the list is already defined elsewhere and makes everything bloated and hard to sustain. Imagine that you want to make change to the list structure, remove fields etc - then you need to look for all functions that used it and check, if they still work - boring and bothersome.  settings = struct()\nsettings.channels = 64\nsettings.outcome = 'matrix'\nselectmatrix(data, settings) % BAD style - doesn't raise errors and warning and needs high control on the selectmatrix function side. Also, can lead to settings definitions far away from the function which reduces reading flow. Also, it is LONG!\n\nselectmatrix(data, 'channels', 64, 'outcome', 'matrix') % GOOD - clear what it does, can be easilly controlled in the function. One line as well.  Use defensive programming!\nDefensive programming is writing code that reports errors and doesn't allow to fail in the middle just because. It is extremely important especially in languages as matlab, R, javascript etc. that allow non typed variables to be accepted - eg.g user can pass matrix instead of value by mistake and function will allow it. Defensive programming is also paramount in all cases where users directly interact with functions. It is not as important in functions that only other functions call.  defensive programming can be implemented by assertions as well as clearly stating what type of variable you expect and what you return  % FUNCTION to return first character of given string\nfunction[output] = rtrnfrstch(input) %BAD - not clear what shoudl go in and what to expect\n  output = input(1) %BAD - what if input is a struct?\nend\n\n%GOOD\nfunction [outputCharacter] = returnfirstletter(inputString)\n  assert()\n  if ~character(inputString)\n    warning() %well defined matlab warning message\n  end\n  outputCharacter = inputString(1)\nend  function [character] = returnfirstletter(inputString)\nend",
+            "title": "Self sustaining code"
+        },
+        {
+            "location": "/coding-style/#flow",
+            "text": "Don't use while unless you are a absolutely sure what you are doing.",
+            "title": "Flow"
+        },
+        {
+            "location": "/coding-style/#comments",
+            "text": "General rule is that every comment in flow points to poorly written code. If you use non standard naming conventions, non standard input types etc. then you need comments. But at that time it's important to ask a question, shouldn't I rather rewrite the code behind?  If you can't, or the functions do not make sense, then add comments.",
+            "title": "Comments"
+        },
+        {
+            "location": "/coding-style/#functions",
+            "text": "Functions should be self sustained where possible. Should not depend on other functions or inputs that are not of basic types (integer, string, list etc.).  functions should validate input where error can be expected   function should not depend on specific input of other functions if possible - this can lead to confusion in complex functions as matlab or R doesn't well implement namespaces and classes    naming should be preserved throughout functions if possible (if one function accepts \"header\" as parameter, the passing script should also pass in header variable)   functions should be short (under 60 lines) and do a single thing",
+            "title": "Functions"
+        },
+        {
+            "location": "/coding-style/#naming-conventions",
+            "text": "These are some of the naming conventions that deal with clarity of the text. Each programming language has some rules and conventions that you should adopt to better communicate with the community, share and collaborate. Please refer to each individual programming language for specifics of naming. Here are only general style requirements.",
+            "title": "Naming conventions"
+        },
+        {
+            "location": "/coding-style/#variables",
+            "text": "Things should be named clearly, uniquely.  ch = 3 %BAD\nchannel = 3\nselCh_i = [5:10]  %BAD\nselectedChannelsIndices = [5:10] %GOOD  Namig should reflect what will reside inside, therefore keep plurals, indicate if it will be a number or string, etc.  results = data.frame(id = c(1:100), height = seq())\n\ncarIndex = c(2,3,4) #BAD - should be carIndices\ncompleteCases = c(1:54, 67:98) #SEMI-GOOD - better use of plural, but we don't know if it talks about rows, list indices, referencing table column\ncompleteCasesRows =  c(1:54, 67:98) #GOOD\nresultsTable[completeCaseRows, ] #simple selection\n\ncompleteCasesId = c(1:54, 67:98) #GOOD\nresults[results$id %in% completeCasesId, ] #selection based on id",
+            "title": "Variables"
+        },
+        {
+            "location": "/coding-tips/",
+            "text": "General tips\n\n\nLanguage specific tips",
+            "title": "Coding tips"
+        },
+        {
+            "location": "/coding-tips/#general-tips",
+            "text": "",
+            "title": "General tips"
+        },
+        {
+            "location": "/coding-tips/#language-specific-tips",
+            "text": "",
+            "title": "Language specific tips"
+        },
+        {
+            "location": "/examples/",
+            "text": "Rewriting R code\n\n\nWhat is this code doing?\n\n\nHave a look at the following simple code control.\n\n\n  d = 0\n  wkd = 7\n  w = 0\n  nd = 0\n  y = 0\n  while(nd < 1000){\n    d = d + 1\n    if (d == wkd){\n      d = 0\n      w = w + 1\n    }\n    nd = nd + 1\n    if (d == 365){\n      y = y + 1\n    }\n  }\n  print(w)\n  print(y)\n\n\n\n\nIn the end you probably figured out what it does. It basically counts the number of days and weeks in the 1000 days that begin the statement. Well, the truth is, that you read it and have no idea what is happening. THat is bad. Nobody can fix if something goes wrong. There might be bug inside that you miss and you have no idea where - and there is a bug in the code. So what you happen if we just fix it with comments?\n\n\n  #day counter\n  d = 0\n  #days in a week\n  wkd = 7\n  #number of weeks\n  w = 0\n  #number of days\n  nd = 0\n  #number of years\n  y = 0\n  while(nd < 1000){\n    d = d + 1 #add a day\n    if (d == wkd){ #check if week\n      d = 0\n      w = w + 1 #add 1 to weeks\n    }\n    nd = nd + 1 #add counter\n    if (d == 365){ #check if days equal number of days in a year\n      y = y + 1 #add one to year\n    }\n  }\n  print(w)\n  print(y)\n\n\n\n\nDid I solve something? No. I made thing worse, less readable and longer. So let's make it slightly better.\n\n\n  dayCounter = 0\n  daysInWeek = 7\n  nWeeks= 0\n  nDays = 0\n  nYears = 0\n  while(nDays < 1000){\n    dayCounter = dayCounter + 1\n    if (dayCounter == daysInWeek){\n      dayCounter = 0\n      nWeeks = nWeeks + 1\n    }\n    nDays = nDays + 1\n    if (dayCounter == 365){\n      nYears = nYears + 1\n    }\n  }\n  print(nWeeks)\n  print(nDays)\n\n\n\n\nSuddenly we don't need comments and also the bug is immediatelly clear.\n\n\nif (dayCounter == 365){\n  nYears = nYears + 1\n}\n\n\n\n\nShould be\n\n\nif (nDays == 365){\n  nYears = nYears + 1\n}\n\n\n\n\nBut we can make things even better. Days in week is a constant, so we mark it as such. Also, days in week are variable but days in year are not. That is inconsistent. So following is more clear\n\n\nDAYS_IN_WEEK = 7\nDAYS_IN_YEAR = 365\n\n\n\n\nRewrite one line if for shorter code (if the language allows it)\n\n\nif (dayCounter == 365) nYears = nYears + 1\n\n\n\n\nAnd most importantly, put everything that does one thing into a function. Now the problem with R is that id doesn't allow two outputs from function, so we need to be smart about it. One option is to write two functions.\n\n\nfunction = WeeksInDays(nDays){\n  DAYS_IN_WEEK = 7\n  dayCounter = 0\n  nWeeks = 0\n  for(i in 1:nDays){\n    dayCounter = dayCounter + 1\n    if (dayCounter == DAYS_IN_WEEK){\n      dayCounter = 0\n      nWeeks = nWeeks + 1\n    }\n  }\n  return(nWeeks);\n}\nfunction = YearsInDays(nDays){\n  DAYS_IN_YEAR = 365\n  dayCounter = 0\n  nYears = 0\n  for(i in 1:nDays){\n    dayCounter = dayCounter + 1\n    if (dayCounter == DAYS_IN_YEAR){\n      dayCounter = 0\n      nYears = nYears + 1\n    }\n  }\n  return(nYears);\n}\nprint(WeeksInDays(1000))\nprint(YearsInDays(1000))\n\n\n\n\nNow that looks better but actually, for loop is crap to do such thing. Always try to thing if there is simple sollution that uses less lines of code. Formely it was paramount to write economic code, but now readibility is preffered. So what about modulo?\n\n\nfunction = WeeksInDays(nDays){\n  DAYS_IN_WEEK = 7\n  remainderDays = nDays %% DAYS_IN_WEEK\n  nWeeks = (ndays - remainderDays) / DAYS_IN_WEEK\n  return(nWeeks);\n}\nfunction = YearsInDays(nDays){\n  DAYS_IN_YEAR = 365\n  remainderDays = nDays %% DAYS_IN_YEAR\n  nYears = (ndays - remainderDays) / DAYS_IN_YEAR\n  return(nYears);\n}\nprint(WeeksInDays(1000))\nprint(YearsInDays(1000))\n\n\n\n\nAnd as a last touch, we see there is duplicit code, so let's deal with it right now.\n\n\nfunction = DivideWithoutRemainder(num1, num2){\n  remainder = num1 %% num2\n  return((num1 - remainder) / num2)\n}\nfunction = WeeksInDays(nDays){\n  nWeeks = DivideWithoutRemainder(nDays, 7)\n  return(nWeeks);\n}\nfunction = YearsInDays(nDays){\n  nYears = DivideWithoutRemainder(nDays, 365)\n  return(nYears);\n}\nprint(WeeksInDays(1000))\nprint(YearsInDays(1000))\n\n\n\n\nThis created legible structured code that is easy to maintain as well as understand. Didn't we go quite a trip from the horrific start?",
+            "title": "Examples"
+        },
+        {
+            "location": "/examples/#rewriting-r-code",
+            "text": "",
+            "title": "Rewriting R code"
+        },
+        {
+            "location": "/examples/#what-is-this-code-doing",
+            "text": "Have a look at the following simple code control.    d = 0\n  wkd = 7\n  w = 0\n  nd = 0\n  y = 0\n  while(nd < 1000){\n    d = d + 1\n    if (d == wkd){\n      d = 0\n      w = w + 1\n    }\n    nd = nd + 1\n    if (d == 365){\n      y = y + 1\n    }\n  }\n  print(w)\n  print(y)  In the end you probably figured out what it does. It basically counts the number of days and weeks in the 1000 days that begin the statement. Well, the truth is, that you read it and have no idea what is happening. THat is bad. Nobody can fix if something goes wrong. There might be bug inside that you miss and you have no idea where - and there is a bug in the code. So what you happen if we just fix it with comments?    #day counter\n  d = 0\n  #days in a week\n  wkd = 7\n  #number of weeks\n  w = 0\n  #number of days\n  nd = 0\n  #number of years\n  y = 0\n  while(nd < 1000){\n    d = d + 1 #add a day\n    if (d == wkd){ #check if week\n      d = 0\n      w = w + 1 #add 1 to weeks\n    }\n    nd = nd + 1 #add counter\n    if (d == 365){ #check if days equal number of days in a year\n      y = y + 1 #add one to year\n    }\n  }\n  print(w)\n  print(y)  Did I solve something? No. I made thing worse, less readable and longer. So let's make it slightly better.    dayCounter = 0\n  daysInWeek = 7\n  nWeeks= 0\n  nDays = 0\n  nYears = 0\n  while(nDays < 1000){\n    dayCounter = dayCounter + 1\n    if (dayCounter == daysInWeek){\n      dayCounter = 0\n      nWeeks = nWeeks + 1\n    }\n    nDays = nDays + 1\n    if (dayCounter == 365){\n      nYears = nYears + 1\n    }\n  }\n  print(nWeeks)\n  print(nDays)  Suddenly we don't need comments and also the bug is immediatelly clear.  if (dayCounter == 365){\n  nYears = nYears + 1\n}  Should be  if (nDays == 365){\n  nYears = nYears + 1\n}  But we can make things even better. Days in week is a constant, so we mark it as such. Also, days in week are variable but days in year are not. That is inconsistent. So following is more clear  DAYS_IN_WEEK = 7\nDAYS_IN_YEAR = 365  Rewrite one line if for shorter code (if the language allows it)  if (dayCounter == 365) nYears = nYears + 1  And most importantly, put everything that does one thing into a function. Now the problem with R is that id doesn't allow two outputs from function, so we need to be smart about it. One option is to write two functions.  function = WeeksInDays(nDays){\n  DAYS_IN_WEEK = 7\n  dayCounter = 0\n  nWeeks = 0\n  for(i in 1:nDays){\n    dayCounter = dayCounter + 1\n    if (dayCounter == DAYS_IN_WEEK){\n      dayCounter = 0\n      nWeeks = nWeeks + 1\n    }\n  }\n  return(nWeeks);\n}\nfunction = YearsInDays(nDays){\n  DAYS_IN_YEAR = 365\n  dayCounter = 0\n  nYears = 0\n  for(i in 1:nDays){\n    dayCounter = dayCounter + 1\n    if (dayCounter == DAYS_IN_YEAR){\n      dayCounter = 0\n      nYears = nYears + 1\n    }\n  }\n  return(nYears);\n}\nprint(WeeksInDays(1000))\nprint(YearsInDays(1000))  Now that looks better but actually, for loop is crap to do such thing. Always try to thing if there is simple sollution that uses less lines of code. Formely it was paramount to write economic code, but now readibility is preffered. So what about modulo?  function = WeeksInDays(nDays){\n  DAYS_IN_WEEK = 7\n  remainderDays = nDays %% DAYS_IN_WEEK\n  nWeeks = (ndays - remainderDays) / DAYS_IN_WEEK\n  return(nWeeks);\n}\nfunction = YearsInDays(nDays){\n  DAYS_IN_YEAR = 365\n  remainderDays = nDays %% DAYS_IN_YEAR\n  nYears = (ndays - remainderDays) / DAYS_IN_YEAR\n  return(nYears);\n}\nprint(WeeksInDays(1000))\nprint(YearsInDays(1000))  And as a last touch, we see there is duplicit code, so let's deal with it right now.  function = DivideWithoutRemainder(num1, num2){\n  remainder = num1 %% num2\n  return((num1 - remainder) / num2)\n}\nfunction = WeeksInDays(nDays){\n  nWeeks = DivideWithoutRemainder(nDays, 7)\n  return(nWeeks);\n}\nfunction = YearsInDays(nDays){\n  nYears = DivideWithoutRemainder(nDays, 365)\n  return(nYears);\n}\nprint(WeeksInDays(1000))\nprint(YearsInDays(1000))  This created legible structured code that is easy to maintain as well as understand. Didn't we go quite a trip from the horrific start?",
+            "title": "What is this code doing?"
+        },
+        {
+            "location": "/languages/matlab/",
+            "text": "Matlab\n\n\nGeneral overview\n\n\nNaming conventions\n\n\nFunctions in matlab are for some reason written as smallcase only, but let's keep it that way\n\n\ngetMeSandwich('tuna with egg') %BAD - c# style\nget_me_sandwich('tuna with egg') %BAD - php style\ngetmesandwich('tuna with egg') %GOOD - matlab style\n\n\n\n\nVariables can vary uppercase and lowercase letters. Global should start with uppercase, local with lowercase\n\n\nchannel_number %BAD - r style, php style - not a good style\nchannelnumber %BAD - this means I am looking at a function\nchannelNumber %GOOD\n\n\n\n\nVariables starting with n or i mean number of or index of only\n\n\nnChannel = 8 %BAD - if this is number of channels, it should be in plural\nchannelIndex = [5:6] %BAD - shoudl be in plural channelIndices\niChannel = 5\niChannels = [4] %GOOD as well as we might add channels to arary\niChannels = [4 5]\nchannelIndex = 7\nnChannels = 64\n\n\n\n\nFolder structure and dependencies\n\n\nMatlab doesn't have forced folder structure but as it uses single files for each function, its structure is more important than in R or Python.\nThere aren't any strict conventions. Just try to separate functions that do the think package wants to do and those that only support its functionality. For example, functions that extract strings or search for the smallest common denominator in a package that deasl with EEG synchronising can easilly reside in a separate folder. I personally try to keep number of matlab files in each folder under 10.",
+            "title": "Matlab"
+        },
+        {
+            "location": "/languages/matlab/#matlab",
+            "text": "",
+            "title": "Matlab"
+        },
+        {
+            "location": "/languages/matlab/#general-overview",
+            "text": "",
+            "title": "General overview"
+        },
+        {
+            "location": "/languages/matlab/#naming-conventions",
+            "text": "Functions in matlab are for some reason written as smallcase only, but let's keep it that way  getMeSandwich('tuna with egg') %BAD - c# style\nget_me_sandwich('tuna with egg') %BAD - php style\ngetmesandwich('tuna with egg') %GOOD - matlab style  Variables can vary uppercase and lowercase letters. Global should start with uppercase, local with lowercase  channel_number %BAD - r style, php style - not a good style\nchannelnumber %BAD - this means I am looking at a function\nchannelNumber %GOOD  Variables starting with n or i mean number of or index of only  nChannel = 8 %BAD - if this is number of channels, it should be in plural\nchannelIndex = [5:6] %BAD - shoudl be in plural channelIndices\niChannel = 5\niChannels = [4] %GOOD as well as we might add channels to arary\niChannels = [4 5]\nchannelIndex = 7\nnChannels = 64",
+            "title": "Naming conventions"
+        },
+        {
+            "location": "/languages/matlab/#folder-structure-and-dependencies",
+            "text": "Matlab doesn't have forced folder structure but as it uses single files for each function, its structure is more important than in R or Python.\nThere aren't any strict conventions. Just try to separate functions that do the think package wants to do and those that only support its functionality. For example, functions that extract strings or search for the smallest common denominator in a package that deasl with EEG synchronising can easilly reside in a separate folder. I personally try to keep number of matlab files in each folder under 10.",
+            "title": "Folder structure and dependencies"
+        },
+        {
+            "location": "/languages/r/",
+            "text": "R\n\n\nGeneral overview\n\n\nNaming conventions\n\n\nClasses and functions\n\n\nFolder structure and dependencies",
+            "title": "R"
+        },
+        {
+            "location": "/languages/r/#r",
+            "text": "",
+            "title": "R"
+        },
+        {
+            "location": "/languages/r/#general-overview",
+            "text": "",
+            "title": "General overview"
+        },
+        {
+            "location": "/languages/r/#naming-conventions",
+            "text": "",
+            "title": "Naming conventions"
+        },
+        {
+            "location": "/languages/r/#classes-and-functions",
+            "text": "",
+            "title": "Classes and functions"
+        },
+        {
+            "location": "/languages/r/#folder-structure-and-dependencies",
+            "text": "",
+            "title": "Folder structure and dependencies"
+        },
+        {
+            "location": "/languages/python/",
+            "text": "Python\n\n\nGeneral overview\n\n\nNaming conventions\n\n\nClasses and functions\n\n\nFolder structure and dependencies",
+            "title": "Python"
+        },
+        {
+            "location": "/languages/python/#python",
+            "text": "",
+            "title": "Python"
+        },
+        {
+            "location": "/languages/python/#general-overview",
+            "text": "",
+            "title": "General overview"
+        },
+        {
+            "location": "/languages/python/#naming-conventions",
+            "text": "",
+            "title": "Naming conventions"
+        },
+        {
+            "location": "/languages/python/#classes-and-functions",
+            "text": "",
+            "title": "Classes and functions"
+        },
+        {
+            "location": "/languages/python/#folder-structure-and-dependencies",
+            "text": "",
+            "title": "Folder structure and dependencies"
+        }
+    ]
+}

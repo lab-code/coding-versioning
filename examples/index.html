@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Examples - Code better</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Examples";
+    var mkdocs_page_input_path = "examples.md";
+    var mkdocs_page_url = "/examples/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Code better</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../versioning/">Versioning</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../coding-style/">Coding style</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../coding-tips/">Coding tips</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Examples</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#rewriting-r-code">Rewriting R code</a></li>
+                
+                    <li><a class="toctree-l4" href="#what-is-this-code-doing">What is this code doing?</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Languages</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../languages/matlab/">Matlab</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../languages/r/">R</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../languages/python/">Python</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Code better</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Examples</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="rewriting-r-code">Rewriting R code</h1>
+<h2 id="what-is-this-code-doing">What is this code doing?</h2>
+<p>Have a look at the following simple code control.</p>
+<pre><code class="r">  d = 0
+  wkd = 7
+  w = 0
+  nd = 0
+  y = 0
+  while(nd &lt; 1000){
+    d = d + 1
+    if (d == wkd){
+      d = 0
+      w = w + 1
+    }
+    nd = nd + 1
+    if (d == 365){
+      y = y + 1
+    }
+  }
+  print(w)
+  print(y)
+</code></pre>
+
+<p>In the end you probably figured out what it does. It basically counts the number of days and weeks in the 1000 days that begin the statement. Well, the truth is, that you read it and have no idea what is happening. THat is bad. Nobody can fix if something goes wrong. There might be bug inside that you miss and you have no idea where - and there is a bug in the code. So what you happen if we just fix it with comments?</p>
+<pre><code class="r">  #day counter
+  d = 0
+  #days in a week
+  wkd = 7
+  #number of weeks
+  w = 0
+  #number of days
+  nd = 0
+  #number of years
+  y = 0
+  while(nd &lt; 1000){
+    d = d + 1 #add a day
+    if (d == wkd){ #check if week
+      d = 0
+      w = w + 1 #add 1 to weeks
+    }
+    nd = nd + 1 #add counter
+    if (d == 365){ #check if days equal number of days in a year
+      y = y + 1 #add one to year
+    }
+  }
+  print(w)
+  print(y)
+</code></pre>
+
+<p>Did I solve something? No. I made thing worse, less readable and longer. So let's make it slightly better.</p>
+<pre><code class="r">  dayCounter = 0
+  daysInWeek = 7
+  nWeeks= 0
+  nDays = 0
+  nYears = 0
+  while(nDays &lt; 1000){
+    dayCounter = dayCounter + 1
+    if (dayCounter == daysInWeek){
+      dayCounter = 0
+      nWeeks = nWeeks + 1
+    }
+    nDays = nDays + 1
+    if (dayCounter == 365){
+      nYears = nYears + 1
+    }
+  }
+  print(nWeeks)
+  print(nDays)
+</code></pre>
+
+<p>Suddenly we don't need comments and also the bug is immediatelly clear.</p>
+<pre><code class="r">if (dayCounter == 365){
+  nYears = nYears + 1
+}
+</code></pre>
+
+<p>Should be</p>
+<pre><code class="r">if (nDays == 365){
+  nYears = nYears + 1
+}
+</code></pre>
+
+<p>But we can make things even better. Days in week is a constant, so we mark it as such. Also, days in week are variable but days in year are not. That is inconsistent. So following is more clear</p>
+<pre><code class="r">DAYS_IN_WEEK = 7
+DAYS_IN_YEAR = 365
+</code></pre>
+
+<p>Rewrite one line if for shorter code (if the language allows it)</p>
+<pre><code class="r">if (dayCounter == 365) nYears = nYears + 1
+</code></pre>
+
+<p>And most importantly, put everything that does one thing into a function. Now the problem with R is that id doesn't allow two outputs from function, so we need to be smart about it. One option is to write two functions.</p>
+<pre><code class="r">function = WeeksInDays(nDays){
+  DAYS_IN_WEEK = 7
+  dayCounter = 0
+  nWeeks = 0
+  for(i in 1:nDays){
+    dayCounter = dayCounter + 1
+    if (dayCounter == DAYS_IN_WEEK){
+      dayCounter = 0
+      nWeeks = nWeeks + 1
+    }
+  }
+  return(nWeeks);
+}
+function = YearsInDays(nDays){
+  DAYS_IN_YEAR = 365
+  dayCounter = 0
+  nYears = 0
+  for(i in 1:nDays){
+    dayCounter = dayCounter + 1
+    if (dayCounter == DAYS_IN_YEAR){
+      dayCounter = 0
+      nYears = nYears + 1
+    }
+  }
+  return(nYears);
+}
+print(WeeksInDays(1000))
+print(YearsInDays(1000))
+</code></pre>
+
+<p>Now that looks better but actually, for loop is crap to do such thing. Always try to thing if there is simple sollution that uses less lines of code. Formely it was paramount to write economic code, but now readibility is preffered. So what about modulo?</p>
+<pre><code class="r">function = WeeksInDays(nDays){
+  DAYS_IN_WEEK = 7
+  remainderDays = nDays %% DAYS_IN_WEEK
+  nWeeks = (ndays - remainderDays) / DAYS_IN_WEEK
+  return(nWeeks);
+}
+function = YearsInDays(nDays){
+  DAYS_IN_YEAR = 365
+  remainderDays = nDays %% DAYS_IN_YEAR
+  nYears = (ndays - remainderDays) / DAYS_IN_YEAR
+  return(nYears);
+}
+print(WeeksInDays(1000))
+print(YearsInDays(1000))
+</code></pre>
+
+<p>And as a last touch, we see there is duplicit code, so let's deal with it right now.</p>
+<pre><code class="r">function = DivideWithoutRemainder(num1, num2){
+  remainder = num1 %% num2
+  return((num1 - remainder) / num2)
+}
+function = WeeksInDays(nDays){
+  nWeeks = DivideWithoutRemainder(nDays, 7)
+  return(nWeeks);
+}
+function = YearsInDays(nDays){
+  nYears = DivideWithoutRemainder(nDays, 365)
+  return(nYears);
+}
+print(WeeksInDays(1000))
+print(YearsInDays(1000))
+</code></pre>
+
+<p>This created legible structured code that is easy to maintain as well as understand. Didn't we go quite a trip from the horrific start?</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../languages/matlab/" class="btn btn-neutral float-right" title="Matlab">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../coding-tips/" class="btn btn-neutral" title="Coding tips"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../coding-tips/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../languages/matlab/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
