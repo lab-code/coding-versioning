@@ -3,40 +3,40 @@
 
     
     <url>
-     <loc>None/</loc>
-     <lastmod>2017-03-14</lastmod>
+     <loc>/</loc>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/versioning/</loc>
-     <lastmod>2017-03-14</lastmod>
+     <loc>/versioning/</loc>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/coding-style/</loc>
-     <lastmod>2017-03-14</lastmod>
+     <loc>/coding-style/</loc>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/coding-tips/</loc>
-     <lastmod>2017-03-14</lastmod>
+     <loc>/coding-tips/</loc>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
     <url>
-     <loc>None/examples/</loc>
-     <lastmod>2017-03-14</lastmod>
+     <loc>/examples/</loc>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -44,20 +44,20 @@
     
         
     <url>
-     <loc>None/languages/matlab/</loc>
-     <lastmod>2017-03-14</lastmod>
+     <loc>/languages/matlab/</loc>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/languages/r/</loc>
-     <lastmod>2017-03-14</lastmod>
+     <loc>/languages/r/</loc>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/languages/python/</loc>
-     <lastmod>2017-03-14</lastmod>
+     <loc>/languages/python/</loc>
+     <lastmod>2017-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
